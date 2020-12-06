@@ -34,7 +34,10 @@ $(document).ready(function() {
         }
         
         // After the proper api route is selected, I use fetch to send an api GET request to the specified route
-        fetch(herokuURL + api_url).then(function(response) {
+        fetch(herokuURL + api_url, {
+            credentials: "include"
+          })
+          .then(function(response) {
             // Waits for the response from the backend then grabs the data
             response.json().then(function(data) {
                 // Sets the courses array to the array sent from the backend
