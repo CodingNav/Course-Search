@@ -12,7 +12,7 @@ $(document).ready(function() {
         // Grab all information from inputs
         var search = $("#search").val();
         var level = $("#level").val();
-        var searchType = $(".search-type").val();
+        var searchType = $(".search-type:checked").val();
 
         // Set up default api route for Radio Buttons (i.e. /api/by_instructor/Puya)
         var api_url = `/api/by_${searchType}/${search}`;
