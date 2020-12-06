@@ -9,16 +9,18 @@ var api = require('./api-routes.js')
 
 var PORT = process.env.PORT || 3000;
 
-
-// Connects express to api routes file
-app.use('/api', api)
-
-
 // Allows static content within public folder to load
 app.use(express.static('public'))
 
 // Allows for other sites to use my project's resources 
-app.use(cors())
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*"); 
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
+// Connects express to api routes file
+app.use('/api', api)
 
 // GET route for the index.html
 app.get('/', function (req, res) {
