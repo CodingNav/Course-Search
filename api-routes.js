@@ -26,12 +26,12 @@ router.get('/by_course_code/:qcode', function (req, res) {
 });
 
 router.get('/by_title/:qtitle', function (req, res) {
-    var code = req.params.qtitle.toUpperCase();
+    var title = req.params.qtitle.toUpperCase();
     var foundCourses = [];
 
     for (var i = 0; i < courses.length; i++) {
         var currCourse = courses[i];        
-        if (currCourse.title.toUpperCase().indexOf(code) > -1) {
+        if (currCourse.title.toUpperCase().indexOf(title) > -1) {
             foundCourses.push(currCourse);
         } 
     }
@@ -40,12 +40,12 @@ router.get('/by_title/:qtitle', function (req, res) {
 });
 
 router.get('/by_instructor/:qname', function (req, res) {
-    var code = req.params.qname.toUpperCase();
+    var instructor = req.params.qname.toUpperCase();
     var foundCourses = [];
 
     for (var i = 0; i < courses.length; i++) {
         var currCourse = courses[i];        
-        if (currCourse.instructor.toUpperCase().indexOf(code) > -1) {
+        if (currCourse.instructor.toUpperCase().indexOf(instructor) > -1) {
             foundCourses.push(currCourse);
         } 
     }
