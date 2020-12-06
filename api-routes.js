@@ -1,21 +1,27 @@
+// Loading express
 var express = require('express');
 var router = express.Router();
 
+// Grabbing the database
 var db = require("./db/courses.json");
 var courses = db.courses;
 
-// define the home page route
+// Created GET route to allow searching for course_code
 router.get('/by_course_code/:qcode', function (req, res) {
+    // Allows for the api route to be case insensitive
     var code = req.params.qcode.toUpperCase();
+    // Array for the courses found in the database
     var foundCourses = [];
 
+    // Looping through all the courses checking which meets the criteria 
     for (var i = 0; i < courses.length; i++) {
-        var currCourse = courses[i];        
+        var currCourse = courses[i];                
         if (currCourse.course_code.toUpperCase().indexOf(code) > -1) {
             foundCourses.push(currCourse);
         } 
     }
 
+    // Sends JSON array as response to requester
     res.json(foundCourses);
 });
 
@@ -61,7 +67,9 @@ router.get('/by_level/:qlevel', function (req, res) {
     res.json(foundCourses);
 });
 
+// Created GET route for combined_query, allows for user to send type of search, search, and level
 router.get('/combined_query/:qtype/:qsearch/:qlevel', function (req, res) {
+    // Grabs type of search, search, and level from URL
     var type = req.params.qtype.toLowerCase();
     var search = req.params.qsearch.toUpperCase();
     var level = req.params.qlevel.toUpperCase();

@@ -5,44 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Finder</title>
+
+    <!-- Imported Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    
-    
+    <!-- Linked Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">        
 </head>
 
 <body>
 
+    <!-- Used Bootstrap grid system (container,row,col) to make site mobile responsive -->
     <div class="container">
         <div class="row">
+            <!-- Centered the column horizontally by adding offset -->
             <div class="col-sm-8 offset-sm-2">
+                <!-- Created form to search the database -->
                 <form id="search-form">
-                    <label for="exampleFormControlSelect1">Select a search option</label>
+                    <!-- Used Radio Inputs to allow user to select a type of search -->
+                    <label for="courseCode">Select a search option</label>
                     <div class="form-check">
-                        <input class="form-check-input search-type" type="radio" name="exampleRadios" id="exampleRadios1"
+                        <input class="form-check-input search-type" type="radio" name="searchTypeRadios" id="courseCode"
                             value="course_code" checked>
-                        <label class="form-check-label" for="exampleRadios1">
+                        <label class="form-check-label" for="courseCode">
                             Course Code
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input search-type" type="radio" name="exampleRadios" id="exampleRadios2"
+                        <input class="form-check-input search-type" type="radio" name="searchTypeRadios" id="title"
                             value="title">
-                        <label class="form-check-label" for="exampleRadios2">
+                        <label class="form-check-label" for="title">
                             Title
                         </label>
                     </div>
                     <div class="form-check disabled">
-                        <input class="form-check-input search-type" type="radio" name="exampleRadios" id="exampleRadios3"
+                        <input class="form-check-input search-type" type="radio" name="searchTypeRadios" id="instructor"
                             value="instructor">
-                        <label class="form-check-label" for="exampleRadios3">
+                        <label class="form-check-label" for="instructor">
                             Instructor
                         </label>
                     </div>
+
+                    <!-- Created search bar -->
                     <div class="form-group">
                         <input id="search" class="form-control" type="text" placeholder="Enter Information">
                     </div>
+
+                    <!-- Added Level dropdown -->
                     <div class="form-group">
                         <label for="level">Select a level</label>
                         <select class="form-control" id="level">
@@ -51,7 +60,9 @@
                             <option value="graduate">Graduate</option>
                         </select>
                     </div>
-                    <input class="btn btn-primary" type="submit" value="Submit">
+
+                    <!-- Submit button -->
+                    <input class="btn btn-primary" type="submit" value="Search">
                 </form>
             </div>
         </div>
@@ -59,6 +70,7 @@
 
         <div class="row">
             <div class="col-sm-8 offset-sm-2">
+                <!-- Container which will load the handlebars templates for the search results -->
                 <ul id="course-widget" class="list-group mt-3 mb-5">
 
                 </ul>
@@ -66,8 +78,12 @@
         </div>
     </div>
 
+    <!-- Handlebars template for each Course's search result -->
     <script id="course-template" type="text/x-handlebars-template">
+        <!-- Display # of results -->
         <p>Courses Found: {{searchedCourses.length}}</p>
+
+        <!-- Loop through all found courses and display info-->
         {{#each searchedCourses}}
             <li class="list-group-item">
                 <div>Course Code: {{course_code}}</div>
@@ -77,6 +93,7 @@
             </li>                
         {{/each}}
     </script>
+    
     <!-- Handlebars -->
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
