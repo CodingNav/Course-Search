@@ -35,7 +35,8 @@ $(document).ready(function() {
         
         // After the proper api route is selected, I use fetch to send an api GET request to the specified route
         fetch(herokuURL + api_url, {
-            credentials: "include"
+            credentials: "include",
+            mode:"cors"
           })
           .then(function(response) {
             // Waits for the response from the backend then grabs the data
