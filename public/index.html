@@ -59,7 +59,7 @@
 
         <div class="row">
             <div class="col-sm-8 offset-sm-2">
-                <ul id="course-widget" class="list-group">
+                <ul id="course-widget" class="list-group mt-3 mb-5">
 
                 </ul>
             </div>
@@ -67,12 +67,15 @@
     </div>
 
     <script id="course-template" type="text/x-handlebars-template">
+        <p>Courses Found: {{searchedCourses.length}}</p>
+        {{#each searchedCourses}}
             <li class="list-group-item">
-                <div>Course Code: </div>
-                <div>Title: </div>
-                <div>Instructor: </div>
-                <div>Level: </div>
+                <div>Course Code: {{course_code}}</div>
+                <div>Title: {{title}}</div>
+                <div>Instructor: {{instructor}}</div>
+                <div>Level: {{course_level}}</div>
             </li>                
+        {{/each}}
     </script>
     <!-- Handlebars -->
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>

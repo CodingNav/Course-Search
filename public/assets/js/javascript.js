@@ -23,15 +23,19 @@ $(document).ready(function() {
         fetch(api_url).then(function(response) {
             response.json().then(function(data) {
                 courses = data;
+                course_view("#course-template")
             });
         });
     });
 
 
-  var couse_view = (view_id) => {
+  var course_view = (view_id) => {
     var source = document.querySelector(view_id).innerHTML;
     var template = Handlebars.compile(source);
-    var html = template(courses);
+    var data = {
+        searchedCourses: courses
+    }
+    var html = template(data);
   
     if (courses.length == 0) {
         html = "<p>No results found.</p>"
