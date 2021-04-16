@@ -2,7 +2,6 @@
 $(document).ready(function() {
 
     var herokuURL = "https://sju-course-finder.herokuapp.com";
-    //var herokuURL = ""; // For testing
 
     // Stores all searched courses within this array
     var courses = [];

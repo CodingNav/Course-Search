@@ -24,7 +24,7 @@
                 <!-- Created form to search the database -->
                 <form id="search-form">
                     <!-- Used Radio Inputs to allow user to select a type of search -->
-                    <label for="courseCode">Select a search option</label>
+                    <label for="courseCode"><b>Select a search option</b></label>
                     <div class="form-check">
                         <input class="form-check-input search-type" type="radio" name="searchTypeRadios" id="courseCode"
                             value="course_code" checked>
@@ -54,7 +54,7 @@
 
                     <!-- Added Level dropdown -->
                     <div class="form-group">
-                        <label for="level">Select a level</label>
+                        <label for="level"><b>Select a level</b></label>
                         <select class="form-control" id="level">
                             <option value="any" selected>Choose...</option>
                             <option value="undergraduate">Undergraduate</option>
@@ -87,10 +87,10 @@
         <!-- Loop through all found courses and display info-->
         {{#each searchedCourses}}
             <li class="list-group-item">
-                <div>Course Code: {{course_code}}</div>
-                <div>Title: {{title}}</div>
-                <div>Instructor: {{instructor}}</div>
-                <div>Level: {{course_level}}</div>
+                <div><b>Course Code:</b> {{course_code}}</div>
+                <div><b>Title:</b> {{title}}</div>
+                <div><b>Instructor:</b> {{instructor}}</div>
+                <div><b>Level:</b> {{course_level}}</div>
             </li>                
         {{/each}}
     </script>
