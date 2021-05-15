@@ -1,5 +1,9 @@
 # Course-Search
-Link to site: https://sju-course-finder.netlify.app/
+<b> Link to site: </b> https://sju-course-finder.netlify.app/
+
+## Preview
+<img src="./public/assets/images/course_finder.png" alt="Game" width="100%"> <br> <img src="./public/assets/images/course_finder.gif" alt="Game" width="100%">
+
 ## API Documentation
 Use the API base URL: https://sju-course-finder.herokuapp.com/
 ### Search Course by Course Code
@@ -159,7 +163,14 @@ Returns json data for courses containing the specified combined queries
   </li>
 </ul>
 
+## Technologies
 
+### Front End
+<img align="middle" src="./public/assets/images/html_css.png" title="HTML5 and CSS3" alt="HTML5 and CSS3" width="25%"/>&nbsp; &nbsp;
+<img align="middle" src="./public/assets/images/js.jpg" title="Javascript" alt="Javascript" width="10%"/> &nbsp; <img align="middle" src="./public/assets/images/bootstrap.png" title="Bootstrap" alt="Bootstrap" width="13%"/>&nbsp; &nbsp;<img align="middle" src="./public/assets/images/jquery.png" title="JQuery" alt="JQuery" width="20%"/> <img align="middle" src="./public/assets/images/handlebars.png" title="Handlebars" alt="Handlebars" width="20%"/>
 
+### Back End
+
+<img align="middle" src="./public/assets/images/nodejs.png" title="NodeJS" alt="NodeJS" width="20%"/> &nbsp; &nbsp; <img align="middle" src="./public/assets/images/expressjs.png" title="ExpressJS" alt="ExpressJS" width="25%"/> 
 
 
