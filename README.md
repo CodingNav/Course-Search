@@ -1,6 +1,7 @@
 # Course-Search
+Link to site: https://sju-course-finder.netlify.app/
 ## API Documentation
-Use the base URL: https://sju-course-finder.herokuapp.com/
+Use the API base URL: https://sju-course-finder.herokuapp.com/
 ### Search Course by Course Code
 Returns json data for courses containing the specified course code
 
