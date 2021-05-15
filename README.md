@@ -4,6 +4,11 @@
 ## Preview
 <img src="./public/assets/images/course_finder.png" alt="Game" width="100%"> <br> <img src="./public/assets/images/course_finder.gif" alt="Game" width="100%">
 
+## About
+<b>Course finder</b> is a web application with a back-end API service that provides students access to information about the courses offered at St John's University. 
+<br>
+<b>Presentation: </b> https://youtu.be/egu6_48MAho
+
 ## API Documentation
 Use the API base URL: https://sju-course-finder.herokuapp.com/
 ### Search Course by Course Code
